@@ -25,7 +25,19 @@
   </div>
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.select :category, Issue.categories, include_blank: true %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+
+    <%= f.radio_button :category, "Bug" %>
+    <%= f.label :category, "Bug", value: "Bug" %>
+
+    <%= f.radio_button :category, "Feature Request" %>
+    <%= f.label :category, "Feature Request", value: "Feature Request" %>
+
+    <%= f.radio_button :category, "Customer Service" %>
+    <%= f.label :category, "Customer Service", value: "Customer Service" %>
   </div>
   <div class="actions">
     <%= f.submit %>
