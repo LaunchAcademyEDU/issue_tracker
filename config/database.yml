@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database:
+  database: issue_tracker_test
   pool: 5
-  username: issue_tracker
+  username:
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database:
+  database: issue_tracker_production
   pool: 5
-  username: issue_tracker
+  username:
   password:
