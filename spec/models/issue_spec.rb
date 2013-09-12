@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Issue do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should_not have_valid(:title).when(nil) }
+  it { should_not have_valid(:description).when(nil) }
 end
