@@ -28,16 +28,13 @@
     <%= f.select :category, Issue.categories, include_blank: true %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
+    <%= f.label :severity %><br>
 
-    <%= f.radio_button :category, "Bug" %>
-    <%= f.label :category, "Bug", value: "Bug" %>
-
-    <%= f.radio_button :category, "Feature Request" %>
-    <%= f.label :category, "Feature Request", value: "Feature Request" %>
-
-    <%= f.radio_button :category, "Customer Service" %>
-    <%= f.label :category, "Customer Service", value: "Customer Service" %>
+    <%-# Loop through each string in the array -%>
+    <%- Issue.severities.each do |severity| -%>
+      <%= f.radio_button :severity, severity %>
+      <%= f.label :severity, severity, value: severity %>
+    <%- end -%>
   </div>
   <div class="actions">
     <%= f.submit %>
