@@ -16,6 +16,8 @@ feature "User creates an issue", %q{
 
   context "with valid attributes" do
     it "creates an issue with valid attributes" do
+      Category.create(name: "Bug")
+      Category.create(name: "Feature Request")
       visit '/issues/new'
 
       fill_in "Title", with: "Broken link"
